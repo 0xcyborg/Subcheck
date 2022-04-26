@@ -7,12 +7,12 @@ with open("List.txt","r") as File:
 
 for Domain in Domains:
   try:
-    Domain = Domain.replace("*.","").strip()
-    gethostbyname(Domain)
+    Domain = Domain.lower().strip()
+    gethostbyname(Domain.replace("*.",""))
     with open("Working.txt","a") as File:
       File.write(Domain + "\n")
     print("Working: ", Domain)
   except Exception:
     print("Not Working: ", Domain)
 else:
-  print("Done All")
+  print("Done")
