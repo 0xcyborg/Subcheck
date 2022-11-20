@@ -2,7 +2,7 @@
 
 from socket import gethostbyname
 
-with open("List.txt","r") as File:
+with open("Result.txt","r") as File:
   Domains = File.readlines()
 
 for Domain in Domains:
