@@ -1,9 +1,18 @@
 # 2022-04-26
 
 from socket import gethostbyname
+from sys import argv
 
-with open("Result.txt","r") as File:
-  Domains = File.readlines()
+if(len(argv) < 2):
+  print("Please Select A File [python3 Tool.py File.txt]")
+  exit()
+  
+try:
+  with open(argv[1], "r") as File:
+    Domains = File.readlines()
+except:
+  print("Not Able To Read The File")
+  exit()
 
 for Domain in Domains:
   try:
